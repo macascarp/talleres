@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.wrapper {
+    border: 1px solid black;
+    width: 1000px;/*800*/
+    height: 600px;/*500*/
+/* Utiliza el cuerpo del documento y se mueve 
+junto con el desplazamiento de página. */
+    position: absolute;
+/* Establece el borde superior del elemento en una unidad por encima
+o por debajo del borde superior de su antepasado posicionado mas cercano. */
+    top: 50%;
+/* Establece el borde izquierdo de un elemento en una unidad a la 
+izq del borde izq de su antepasado posicionado mas cercano. */
+    left: 50%;
+/* Especifica una tanslación 2D dada por el vector [tx, ty]. */
+    transform: translate(-50%, -50%);
+    background-image: url('/img/background.png');
+/* Lo que sobra no se acomoda en la pantalla, sino que se esconde */
+    overflow: hidden;
+}
+
+.score {
+    font-size: 150px;
+    color: #962d7b;
+/* Se posiciona segun su primer elemento ancestro no estatico.
+En este caso, el WRAPPER. */
+    position:absolute;
+/* Establece el borde superior del elemento en una unidad por encima
+o por debajo del borde superior de su antepasado posicionado mas cercano. */
+    top: 10%;
+/* Establece el borde izquierdo de un elemento en una unidad a la 
+izq del borde izq de su antepasado posicionado mas cercano. */
+    left: 50%;
+/* Especifica una tanslación 2D dada por el vector [tx, ty]. */
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 100px;
+/* Alinea segun el <div> */
+    text-align: center;
+    z-index: 100;
+}
+
+.countdown {
+/* Se posiciona segun la posicion del SCORE */
+    position: absolute;
+/* Establece el borde superior del elemento en una unidad por encima
+o por debajo del borde superior de su antepasado posicionado mas cercano. */
+    top: 40px;
+/* Que ocupe el 100% del div */
+    width:100%;
+    font-size: 30px;
+    text-align: right;
+    color:#962d7b;
+    padding: 55px;
+    background-color: whitesmoke;
+}
+
+button {
+/* Se posiciona segun el COUNTDOWN */
+        position: absolute;
+/* A 1OPX del final*/
+        top: 12%;
+/* Al 50% de su izq */
+        left: 30%;
+/* Centró el boton */
+        transform: translate(-50%, 0);
+        background: #962d7b;
+        color: white;
+        padding: 20px 50px;
+        border-radius: 5px;
+/* Establece el orden de pila del elemento.
+Nos aseguramos que este por encima de todos los demas elementos y se
+puede interactuar con el. Pueden ser nros negativos. */
+        z-index: 200;
+        cursor: pointer;
+        border: none;
+/* Linea dibujada alrededor de los elementos fuera de los bordes,
+para hacer que el elemento destaque. */
+        outline: none;
+    }
+
+.game {
+    width: 600px;
+    height: 400px;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+/* Establece el orden de pila del elemento.
+Nos aseguramos que este por encima de todos los demas elementos. */
+    z-index: 200;
+/* Establece la longitud flexible en elementos flex. */
+    display: flex;
+/* Determina si los elementos van a envolverse a lo largo del eje
+principal en una nueva linea. */
+    flex-wrap: wrap;
+}
+
+.hole {
+/* Flex grow, shrink, bases.
+GROW cuánto crecerá el artículo en relación con el resto de los 
+artículos flexibles dentro del mismo contenedor.
+SHRINK cómo se encogerá el elemento en relación con el resto de los 
+elementos flexibles dentro del mismo contenedor.
+BASES especifica la longitud inicial de un artículo flexible. */
+        flex: 1 0 33.33%;
+        position: relative;
+        overflow: hidden;
+    }
+
+/* Quedara entre hole y el elemento siguiente. */
+.hole:after {
+/* Se usa con los pseudoelementos ::before y ::after,
+para insertar contenido generado. */
+        content: '';
+/* Para asegurar que aceptara width & height. */
+        display: block;
+        background-image: url(/img/grass.png);
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        z-index: 2;
+        bottom: -30px;
+/* Para asegurar que se muestre (display) toda la imagen. */
+        background-size: contain;
+    }
+
+.mole {
+    background-image: url(/img/unicorn.png);
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.mole.small {
+    background-size: 60%;
+}
+
+.mole.large {
+    background-size: 80%;
+}
+
+/* Esto sirve solo con el JS */
+.hole.up .mole {
+    top:0;
+}
