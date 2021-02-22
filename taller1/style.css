@@ -1,0 +1,181 @@
+.navbar {
+    background-color: rgb(0, 90, 117);
+}
+
+.navbar-brand {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.navbar-nav {
+    width: 260px;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* CARD */
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 400px;
+}
+
+.col-xl-6 {
+    width: 400px;
+    margin: 0;
+    padding: 0px;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    text-align: left;
+    padding-top: 60px;
+    width: 500px;
+}
+
+
+h2, #lorem {
+    color: rgb(143, 143, 143);
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+#lorem {
+    margin-bottom: 335px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+#valor, #total {
+    color: rgb(75, 126, 128);
+    font-weight: bold;
+}
+
+#valor {
+    font-size: 15px;
+}
+
+#total {
+    font-size: 20px;
+}
+
+#boton-cart {
+    background-color: rgb(11, 148, 202);
+    float: right;
+    font-size: 12px;
+    height: 35px;
+    width: 150px;
+    color: white;
+    }
+
+#cart {
+    margin-right: 15px;
+}
+
+#cant {
+    font-weight: bolder;
+    font-size: 20px;
+    width: 150px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+@media (max-width:990px){
+
+    .navbar-brand {
+        font-weight:normal;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+        color: black;
+        font: weight 500;
+        letter-spacing: 1px;
+    }
+    
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #lorem {
+        margin-bottom: 10px;
+        color: rgb(48, 48, 48);
+    }
+
+    .card-body {
+        text-align: left;
+        padding: 0px;
+        width: 400px;
+    }
+
+    #valor {
+        color: rgb(89, 192, 199);
+    }
+
+    #tot {
+        color: black;
+        margin-top: 10px;
+        font-size: 25px;
+        width: 30px;
+    }
+
+    #cant {
+        font-weight: normal;
+        font-size: 20px;
+        width: 150px;
+        float: right;
+    }
+
+    hr {
+        margin-top: 30px;
+    }
+    
+    label {
+        font-weight: normal;
+        font-size: 17px;
+        margin-right: 10px;
+    }
+
+    #boton-cart {
+        background-color: rgb(0, 90, 117);
+        float: right;
+        font-size: 20px;
+        height: 60px;
+        width: 170px;
+        color: white;
+        border-radius: 3px;
+        border: none;
+        }
+
+        #cart {
+            margin-right: 15px;
+        }
+
+        .navbar {
+            width: auto;
+        }
+    
+}
